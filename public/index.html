@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="Abner Persio">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>a Genda - Gerenciamento Inteligente</title>
+	<link rel="icon" href="./assets/images/favicon.ico">	
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="https://unpkg.com/intro.js/minified/introjs.min.css" rel="stylesheet" >
+	<link href="./assets/css/preloader.css" rel="stylesheet">
+	<link href="./assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<!-- /global stylesheets -->
+	<!-- Core JS files -->
+	<script  src="./js/core/libraries/jquery.min.js"></script>
+	<script  src="./js/core/libraries/bootstrap.min.js"></script>
+	<script  src="./js/plugins/ui/nicescroll.min.js"></script>
+	<script  src="./js/plugins/ui/drilldown.js"></script>
+	<script src="./js/core/core.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script src="./js/core/libraries/jquery_ui/interactions.min.js"></script>
+	<script src="./js/plugins/forms/selects/select2.min.js"></script>
+
+	<script src="./js/plugins/forms/styling/switchery.min.js"></script>
+
+	<script  src="./js/plugins/forms/styling/uniform.min.js"></script>
+	<script  src="./js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script  src="./js/plugins/ui/moment/moment.min.js"></script>
+	
+	<!-- rrule lib -->
+	<script src="https://cdn.jsdelivr.net/npm/rrule@2.6.6/dist/es5/rrule.min.js"></script>
+	<script  src="./js/plugins/ui/fullcalendar/fullcalendar.min.js"></script>
+	<script  src="./js/plugins/ui/fullcalendar/lang/pt-br.js"></script>
+	
+	<script  src="./js/plugins/notifications/jgrowl.min.js"></script>
+
+	<script src="./js/plugins/pickers/pickadate/picker.js"></script>
+	<script src="./js/plugins/pickers/pickadate/picker.date.js"></script>
+	<script src="./js/plugins/pickers/pickadate/picker.time.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+	<script src="js/utils/calendar.js"></script>
+	<script src="js/utils/notificar.js"></script>
+
+
+	<!-- Quando estiver usando firebase hosting -->
+	<script src="/__/firebase/8.1.1/firebase-app.js"></script>
+	<script src="/__/firebase/8.1.1/firebase-analytics.js"></script>
+	<script src="/__/firebase/8.1.1/firebase-auth.js"></script>
+	<script src="/__/firebase/8.1.1/firebase-database.js"></script> 
+	<script src="/__/firebase/8.1.1/firebase-functions.js"></script>
+	
+	<!-- Inicializando Firebase -->
+	<script src="/__/firebase/init.js"></script>
+	<!-- / Quando estiver usando firebase hosting -->
+	
+</head>
+
+<body>	
+
+	<div class="preloader"> 
+
+		<div class="content">
+				<img class="" src="assets/images/loader.gif">
+				<h4 class="text-white">ajustando calendários&hellip; 😉</h4>
+				<h5 class="text-muted mt-6"> por <a target="blank" href="https:/instagram.com/abnerpersio">Abner Persio</a></h5>
+		</div>	
+	</div>
+	<script src="js/loader.js"></script>
+	
+	<!-- Main navbar -->	
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="	" href="./home"><img src="./assets/images/logo_light.png" alt=""></a>
+
+			
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+
+			<p class="navbar-text"><span class="label bg-success-400">Online</span></p>
+
+			<ul class="nav navbar-nav navbar-right">
+			
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-bubbles4"></i>
+						<span class="visible-xs-inline-block position-right">Mensagens</span>
+					</a>
+					
+					<div class="dropdown-menu dropdown-content width-350">
+						<div class="dropdown-content-heading">
+							Mensagens
+							
+						</div>
+
+						<ul class="media-list dropdown-content-body">
+
+							<li class="media">
+								<div class="media-left">
+									<img src="./assets/images/mascote.png" class="img-circle img-sm" alt="">
+								</div>
+
+								<div class="media-body">
+									<a target="blank" href="https://api.whatsapp.com/send?phone=5519974198800" class="media-heading">
+										<span class="text-semibold">Abner Persio (Developer)</span>
+										<span class="media-annotation pull-right">08:00</span>
+									</a>
+
+									<span class="text-muted">Seja muito bem vindo ao nosso sistema de agenda! Foi tudo pensado em você, espero que goste.</span> 
+									</br> 
+									<span class="text-muted">Aguardo sua avaliação e feedback. Caso precise do suporte, só me chamar: (19) 97419-8800</span>
+								</div>
+							</li>
+
+							<li class="media">
+								<div class="divider"></div>
+							</li>
+
+							<li class="media">
+
+								<div class="media-body" style="text-align: center">
+									<span class="text-muted">Sem mais mensagens por agora :)</span> 
+								</div>
+							</li>
+
+						</ul>
+
+						<div class="dropdown-content-footer">
+							<a href="#" data-popup="tooltip"><i class="icon-menu display-block"></i></a>
+						</div>
+					</div>
+				</li>
+
+				<li class="dropdown dropdown-user">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<img class="userImage" src="" alt="">
+						<span class="vue-display-username" >{{ items }}</span>
+						<i class="caret"></i>
+					</a>
+
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li><a href="./user-config"><i class="icon-cog5"></i> Configurações </a></li>
+						<li class="divider"></li>
+						<li onclick="firebase.auth().signOut()"><a href="#"><i class="icon-switch2"></i> Sair </a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+	<!-- Second navbar -->
+	<div class="navbar navbar-default flash" id="navbar-second">
+		<ul class="nav navbar-nav no-border visible-xs-block">
+			<li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second-toggle"><i class="icon-menu7"></i></a></li>
+		</ul>
+
+		<div class="navbar-collapse collapse" id="navbar-second-toggle">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="./home"> <i class="icomoon icon-calendar52 position-left"></i>  Agenda </a></li>
+
+				<li id="step3" class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-folder6 position-left"></i> Cadastros <span class="caret"></span>
+					</a>
+
+					<ul class="dropdown-menu width-200">
+						<li class="dropdown-header"> Cadastros </li>						
+						<li>
+							<a href="./user-config" class=""> <i class="icon-store2 position-left"></i> Editar </a>
+						</li>
+					</ul>
+				</li>
+
+				<li id="step5" class="">
+					<a target="blank" href="https://wa.me/5519974198800?&text=Olá!%20Preciso%20de%20suporte%20para%20o%20sistema%20A%20Genda" ><i class="icon-headset position-left"></i> Suporte </a>
+				</li>
+
+				<li class="">
+					<a id="step4" target="blank" href="" data-toggle="modal" data-target="#modal_sincronizar"><i class="icon-sync position-left"></i> Sincronizar </a>
+				</li>
+
+				<li class="">
+					<a target="blank" onclick="startIntro()"><i class="icon-tv position-left"></i> Assistir tutorial </a>
+				</li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li> 
+					<a href="./sistema">
+						<i class="icon-embed2 position-left text-muted"></i>
+						Versão
+						<span class="label label-inline position-right bg-success-400">1.0.0</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /second navbar -->
+
+
+	<!-- Page header -->
+	<div class="page-header">
+		<div class="page-header-content">
+			<div class="page-title">
+				<h4>
+					<i class="icon-arrow-left52 position-left"></i>
+					<span class="text-semibold animate__animated animate__flash">Home</span> - A Genda 
+					<small class="display-block">Bom te ter aqui, <span class="vue-display-username">{{ items }}</span>!</small>
+				</h4>
+			</div>
+
+			<div class="heading-elements">
+				<ContentLoader>
+					<rect x="0" y="0" rx="3" ry="3" width="250" height="10" />
+					<rect x="20" y="20" rx="3" ry="3" width="220" height="10" />
+					<rect x="20" y="40" rx="3" ry="3" width="170" height="10" />
+					<rect x="0" y="60" rx="3" ry="3" width="250" height="10" />
+					<rect x="20" y="80" rx="3" ry="3" width="200" height="10" />
+					<rect x="20" y="100" rx="3" ry="3" width="80" height="10" />
+				  </ContentLoader>
+				<div class="heading-btn-group">
+					<a href="./user-config#table" class="btn btn-link btn-float has-text"><i class="icon-table text-primary"></i><span>Acessar Tabela	</span></a>
+					<a id="step1" href="#" class="btn btn-link btn-float has-text" data-toggle="modal" data-target="#modal_novo_cliente"><i class="icon-user-plus text-primary"></i> <span>Novo Cliente</span></a>
+					<a id="step2" href="#" class="btn btn-link btn-float has-text" data-toggle="modal" data-target="#modal_novo_evento"><i class="icon-folder-plus3 text-primary"></i> <span>Novo Evento</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page header -->
+
+
+	<!-- Page container -->
+	<div class="page-container sidebar-mobile-main">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper mb-5">
+
+				<!-- Main charts -->
+				<div class="row">
+						
+					<!-- Quadro da esquerda -->
+
+					<div class="col-lg-2">
+						<!-- Main sidebar -->
+						<div id="step7" class="sidebar sidebar-main sidebar-default">
+							<div class="sidebar-fixed">
+								<div class="sidebar-content">
+
+									<!-- Title -->
+									<div class="category-title h6">
+										<span>Filtrar</span>
+										<ul class="icons-list">
+											<li><i class="icon-filter3"></i></li>
+										</ul>
+									</div>
+									<!-- /title -->
+									
+									<!-- Filtrar por profissionais -->
+									<div class="sidebar-category sidebar-category-visible filtrar-profissionais">
+										<div class="category-title">
+											<span id="step3"><i class="icon-users4 position-left"></i> Profissionais </span>
+											<ul class="icons-list">
+												<li><a href="#" data-action="collapse"></a></li>
+											</ul>
+										</div>
+
+										<div class="category-content no-padding">
+											<ul class="navigation navigation-main navigation-accordion">
+												<li class="navigation-header"><span>clique para filtrar</span> <i class="icon-menu" title="Filtrar"></i></li>
+
+												<select size="8" class="profissionais-filtro vue-display-profissionais" id="profissionais" style="width: 100%; border: none; overflow: auto;outline: none; height: 100%;">
+													<option selected value="all" style="display:none"></option>
+													<option v-for="pessoa in items" v-bind:value="pessoa.nome"> <span>{{ pessoa.nome }}</span></option>
+												</select>
+											</ul>
+										</div>
+									</div>
+									<!-- /Filtrar por profissionais -->
+
+									<!-- Filtrar por Salas -->
+									<div class="sidebar-category sidebar-category-visible filtrar-salas">
+										<div class="category-title">
+											<span><i class="icon-home4 position-left"></i> Salas</span>
+											<ul class="icons-list">
+												<li><a href="#" data-action="collapse"></a></li>
+											</ul>
+										</div>
+
+										<div class="category-content no-padding">
+											<ul class="navigation navigation-main navigation-accordion" >
+												<li class="navigation-header"><span>clique para filtrar</span> <i class="icon-menu" title="Filtrar"></i></li>
+
+												<select size="8" class="salas-filtro vue-display-salas" id="salas" style="width: 100%; border: none; overflow: auto;outline: none; height: 100%;">
+													<option selected value="all" style="display:none"></option>
+													<option v-for="sala in items" v-bind:value="sala.nome"><a href="#"><span>{{ sala.nome }}</span></a></option>
+												</select>
+											</ul>
+										</div>
+									</div>
+									<!-- /Filtrar por Salas -->
+
+								</div>
+							</div>
+						</div>
+						<!-- /main sidebar -->
+					</div>
+					<!-- /Quadro da esquerda -->
+
+					<!-- Painel do calendario -->
+					<div id="step6" class="col-lg-10">
+
+						<div class="panel panel-flat">
+							<div class="panel-heading">
+								<div class="heading-elements">
+							
+			                	</div>
+							</div>
+
+							<div class="container-fluid">
+								<div id="filters">
+									<form class="form-inline">                       
+									  <div class="col-xs-12 col-sm-3">
+										<select class="form-control filter" id="espacoEvento" name="eventType">
+										  <option selected value="harmovida1">Espaço Harmovida 1</option>
+										  <option value="harmovida2">Espaço Harmovida 2</option>
+									   </select>
+									  </div>
+									</form>
+								</div><!--- filters --->
+								
+								<div id="calendario" class="fullcalendar"></div>
+							</div>
+
+						</div>
+
+					</div>
+					<!-- /Painel do calendario -->
+
+				</div>
+				<!-- /main charts -->
+
+
+
+				<!-- modal sincronizar -->
+				<div id="modal_sincronizar" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h5 class="modal-title">Sincronizar com outros serviços</h5>
+							</div>
+							
+								<div class="modal-body text-center px-5">
+									<h6 class="">Deseja sincronizar seu calendário com </br> o <strong>Google Agenda</strong> agora mesmo?</h6>	
+								</div>
+
+								<div class="modal-footer text-center">
+									<!-- <a href="/conectar" class="btn btn-success">Isso mesmo que eu quero!</a> -->
+									<a class="btn btn-success">Em breve disponível!</a>
+								</div>
+						</div>
+					</div>
+				</div>
+				<!-- /modal sincronizar -->
+
+				<!-- modal editar ou remover -->
+				<div id="modal_evento" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h5 class="modal-title">Editar evento</h5>
+							</div>
+							
+								<div class="modal-body text-left">
+									<div class="row">
+										<div class="col-sm-6">
+											<p>Título: <span id="display-title" class="text-bold"></span></p>
+										</div>
+										<div class="col-sm-6">
+											<p>Descrição: <span id="display-desc" class="text-bold"></span></p>
+										</div>
+										<div class="col-sm-6">
+											<p>Início: <span id="display-inicio" class="text-bold"></span></p>
+										</div>
+										<div class="col-sm-6">
+											<p>Fim: <span id="display-fim" class="text-bold"></span></p>
+										</div>
+										<div class="col-sm-6">
+											<p>Paciente: <span id="display-paciente" class="text-bold"></span></p>
+										</div>
+										<div class="col-sm-6">
+											<p>Profissional: <span id="display-profissional" class="text-bold"></span></p>
+										</div>
+										<div class="col-sm-6">
+											<p>Sala: <span id="display-sala" class="text-bold"></span></p>
+										</div>
+										<div class="col-sm-6">
+											<p>Espaço: <span id="display-espaco" class="text-bold"></span></p>
+										</div>
+										<form action="javascript:void(0)" onsubmit="confirmarEvento($('#display-id').text())">
+											<div class="col-sm-6">
+												<p>Confirmado: <span id="display-confirmado" class="text-bold"></span></p>
+												<p><button class="btn btn-info btn-sm">Confirmar?</button></p>
+											</div>
+											<div class="col-sm-6">
+												<p>Id evento: <span id="display-id" class="text-bold"></span></p>
+											</div>
+										</form>
+									</div>
+
+								</div>
+
+								<div class="modal-footer">
+									<a title="Editar" class="btn btn-info">Editar evento <i class="icon-pencil7 position-right" ></i></a>
+									<a onclick="crud.delete($('#display-id').text())" title="Remover" class="btn btn-danger">Remover evento<i class="icon-trash-alt position-right" ></i></a>
+									<button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+								</div>
+						</div>
+					</div>
+				</div>
+				<!-- /modal editar ou remover -->
+
+				<!-- modal novo evento -->
+				<div id="modal_novo_evento" class="modal fade" style="overflow:auto !important;"> <!-- modal fade -->
+					<div class="modal-dialog modal-dialog-scrollable">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h5 class="modal-title">Agendamento <span class="badge bg-primary">* obrigatório</span></h5>
+							</div>
+							
+							<form action="javascript:void(0)" onsubmit="adicionarEvento(this.tipoAgendamento, this.paciente, this.tratamento, this.tipoTratamento, this.especialidade, this.procedimentos, this.profissional, this.sala, this.dataEvento, this.inicio, this.fim, this.obs)">
+								<div class="modal-body">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<label>Tipo de agendamento  <span class="text-muted">*</span></label>
+												<select required class="form-control" name="tipoAgendamento">
+													<option selected disabled value="">Selecione&hellip;</option>
+													<option value="tratamento">Tratamento</option>
+													<option value="avulso">Sessão Avulsa</option>
+													<option value="reserva">Reserva de Sala</option>
+													<option value="retorno">Retorno</option>
+												</select>
+											</div>
+											<div class="col-sm-6">
+												<label>Paciente  <span class="text-muted">*</span></label>
+												<div class="input-group">
+													<select class="select-pesquisa vue-display-pacientes" id="pacientes" name="paciente">
+														<option selected disabled>Pesquise pelo nome&hellip;</option>
+														<option v-for="paciente in items" v-bind:value="paciente.nome" v-bind:id="paciente.cpf"> <span>{{ paciente.nome }}</span></option>
+													</select>
+													<div class="input-group-btn">
+														<button type="button" class="btn btn-primary" id="novo_cliente" data-toggle="modal" data-target="#modal_novo_cliente">+</button>
+													</div>
+												</div>
+											
+											</div>
+
+										</div>
+									</div>
+
+									
+									<div class="form-group">
+										<div class="row">
+
+											<div class="col-sm-6">
+												<label>Sobre o tratamento</label>
+												<div class="input-group">
+													<select class="form-control" name="tratamento">
+														<option selected disabled value="nenhum resultado">Nenhum resultado</option>
+														
+													</select>	
+													<div class="input-group-btn">
+														<button type="button" class="btn btn-primary" id="novo_tratamento_btn" data-toggle="collapse" data-target="#novo_tratamento">+</button>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-sm-6">
+												<label>Especialidade </label>
+												<select required class="form-control vue-display-especialidades" id="especialidades" name="especialidade">
+													<option selected disabled value="">Selecione&hellip;</option>
+													<option v-for="especialidade in items" v-bind:value="especialidade.nome"> <span>{{ especialidade.nome }}</span></option>
+												</select>
+											</div>
+
+										</div>					
+									</div>
+
+
+									<div class="collapse" id="novo_tratamento">
+
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6">
+													<label>Tipo</label>
+													<select class="form-control" name="tipoTratamento">
+														<option selected disabled value="">Selecione&hellip;</option>
+														<option value="pacote">Pacote</option>
+														<option value="plano">Plano</option>
+														<option value="combo">Combo</option>
+														<option value="mensalidade">Mensalidade</option>
+													</select>
+												</div>
+
+												<div class="col-sm-6 form-group">
+													<label>Procedimentos <span class="text-muted">*</span></label>
+													<select multiple="multiple" class="select-dois vue-display-procedimentos" id="procedimentos" name="procedimentos">
+														<option v-for="procedimento in items" v-bind:value="procedimento.nome"> <span>{{ procedimento.nome }}</span></option>
+													</select>
+												</div>
+		
+											</div>
+										</div>
+
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<label>Profissional  <span class="text-muted">*</span></label>	
+												<select required class="form-control vue-display-profissionais" id="profissionais" name="profissional">
+													<option selected disabled value="">Selecione&hellip;</option>
+													<option v-for="pessoa in items" v-bind:value="pessoa.nome"> <span>{{ pessoa.nome }}</span></option>
+												</select>
+											</div>
+
+											<div class="col-sm-6">
+												<label>Sala  <span class="text-muted">*</span></label>
+												<select required class="form-control vue-display-salas input-salas" id="salas" name="sala">
+													<option selected disabled value="">Selecione&hellip;</option>
+													<option v-for="sala in items" v-bind:value="sala.nome"> <span>{{ sala.nome }}</span></option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+
+										<div class="row">
+											<div class="col-sm-6">
+												<label>Data  <span class="text-muted">*</span></label>
+													<div class="input-group">
+														<input required type="text" id="data_evento" class="form-control selecionador" placeholder="Qual a melhor data?" name="dataEvento">
+														<label for="data_evento" class="input-group-addon btn btn-info"><i class="icon-calendar2"></i></label>
+													</div>
+											</div>
+											<div class="col-sm-3">
+												<label>Início  <span class="text-muted">*</span></label>
+												<div class="input-group">
+													<input type="time" class="form-control" id="hour-start" name="inicio" />
+												</div>
+											</div>
+											<div class="col-sm-3">	
+												<label>Fim  <span class="text-muted">*</span></label>
+												<div class="input-group">
+													<input type="time" class="form-control" id="hour-end" name="fim" />
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group display-horarios-reservados" style="display: none">
+										<label>Esses horários ja estão reservados: <span id="horarios_reservados"></span></label>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group" data-toggle="collapse" data-target="#repetir_evento">
+													<label class="checkbox-inline checkbox-switchery switchery-xs">
+													<input type="checkbox" class="js-switch" />
+													Repetir esse evento mais vezes
+												</label>
+												</div>
+
+												
+
+											</div>
+										</div>
+									</div>
+
+									<!-- collapse repetir evento -->
+									<div class="collapse" id="repetir_evento">
+										<!-- row -->
+										<div class="row">	
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label for="repetir_evento">Escolha a recorrência</label>
+													<select class="form-control" name="repetir" id="repetir_evento">
+														<option selected disabled value="">Selecione&hellip;</option>
+														<option value="YEARLY">Anual</option>
+													  	<option value="MONTHLY">Mensal</option>
+													  	<option value="WEEKLY">Semanal</option>
+													  	<option value="DAILY">Diário</option>
+													  	<option value="personalizado">Personalizado</option>
+													</select>
+												  </div>
+											</div>
+
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label for="repetir_ate">Até quando?</label>
+													<input type="datetime-local" class="form-control" name="repetir" id="repetir_ate" />													
+												  </div>
+											</div>
+										</div> <!--/ row-->
+										
+									</div> 
+									<!-- /collapse repetir evento -->
+
+									<div class="form-group">
+										<label for="obs">Observações</label>
+										<textarea name="obs" class="form-control" name="observacao" id="obs" rows="3"></textarea>
+									</div>
+								
+								</div>
+
+								<div class="modal-footer">
+									<button id="close_novo_evento" type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+									<button type="submit" class="btn btn-primary">Enviar meu evento!</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- /modal novo evento -->
+	
+	            <!-- modal novo cliente -->
+				<div id="modal_novo_cliente" class="modal fade">
+					<div class="modal-dialog modal-dialog-scrollable">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h5 class="modal-title">Novo Cliente</h5>
+							</div>
+
+							<form action="javascript:void(0)" onsubmit="novoCliente(this.nome.value, this.telefone.value, this.cpf.value, this.email.value)">
+								<div class="modal-body">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<label>Nome  <span class="text-muted">*</span></label>
+												<input required type="text" name="nome" placeholder="Insira o Nome do cliente" class="form-control">
+											</div>
+
+											<div class="col-sm-6">
+												<label>Telefone  <span class="text-muted">*</span></label>
+												<input required type="number" name="telefone" placeholder="Telefone para contato" class="form-control">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<label>CPF  <span class="text-muted">*</span></label>
+												<input required type="text" name="cpf" placeholder="CPF" class="form-control">
+											</div>
+
+											<div class="col-sm-6">
+												<label>Email</label>
+												<input type="cpf" name="email" placeholder="Email (opcional)" class="form-control">
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+
+								<div class="modal-footer">
+									<button id="close_novo_cliente" type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+									<button type="submit" class="btn btn-primary">Adicionar</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- /modal novo cliente -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+
+		<!-- Footer -->
+		<div class="footer text-muted">
+			v. <a href="#"> 1.0.0</a>.
+		</br>
+			&copy; 2020 <a href="#">a Genda Sistemas de Controle</a>.
+			Criado com &hearts; por <a target="blank" href="https:/instagram.com/abnerpersio">Abner Persio</a>
+		</div>
+		<!-- /footer -->
+
+	</div>
+	<!-- /page container -->
+
+	<!-- caso esteja usando em um computador ou local -->
+	<!-- 
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-functions.js"></script>
+
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyAUR1AS0beiA9C1ObpNwVw2T-VM_mxtx0I",
+			authDomain: "a-genda-2020.firebaseapp.com",
+			databaseURL: "https://a-genda-2020.firebaseio.com",
+			projectId: "a-genda-2020",
+			storageBucket: "a-genda-2020.appspot.com",
+			messagingSenderId: "397881610119",
+			appId: "1:397881610119:web:1309ef7354f79472448d22",
+			measurementId: "G-012DRR6N3T"
+  		};
+  			// Inicializando Firebase
+  		firebase.initializeApp(firebaseConfig);
+	</script>
+	-->
+	<!-- /caso esteja usando em um computador ou local -->
+
+
+	<script src="js/database/crud.js"></script>
+	<script src="js/auth/auth.js"></script>	
+	<script src="js/auth/observer.js"></script>	
+	<script src="./js/app.js"></script>
+
+	<script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+
+	<!-- intro js -->
+	<script>
+
+		function startIntro(){
+        var intro = introJs();
+          intro.setOptions({
+            steps: [
+              {
+                intro: "Seja bem vindo (a) ao tutorial de como usar nosso sistema de agenda!"
+              },
+              {
+                element: document.querySelector('#step1'),
+				intro: "aqui você adicionará um novo cliente. Este será seu primeiro passo após o tutorial",
+                position: 'left'
+              },
+              {
+                element: document.querySelector('#step2'),
+                intro: "o que acha de depois adicionar um evento para o cliente?",
+                position: 'left'
+              },
+              {
+				element: '#step3',
+				intro: 'aqui você altera suas configurações',
+                position: 'right'
+              },
+              {
+                element: '#step4',
+                intro: "sincronize com o Google calendário neste botão :)",
+                position: 'bottom'
+			  },
+			  {
+                element: '#step5',
+                intro: "fale com o suporte por aqui. Estamos à disposição!",
+                position: 'bottom'
+			  },
+			  {
+                element: '#step6',
+                intro: "seu calendário de eventos estará sempre aqui",
+                position: 'top'
+			  },
+			  {
+                element: '#step7',
+                intro: "filtre seus eventos através dessa barra lateral",
+                position: 'right'
+              },
+              {
+                intro: 'este sistema foi feito especialmente pensado em você. Faça bom proveito!'
+              }
+			],
+          });
+
+          intro.start();
+      }
+
+	</script>
+
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [ 
+      {
+        "source": "/home",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/login",
+        "destination": "/login.html"
+      },
+      {
+        "source": "/registrar",
+        "destination": "/registrar.html"
+      },
+      {
+        "source": "/user-config",
+        "destination": "/user_config.html"
+      },
+      {
+        "source": "/sistema",
+        "destination": "/changelog.html"
+      },
+      {
+        "source": "/termos",
+        "destination": "/termos.html"
+      },
+      {
+        "source": "/sync",
+        "function": "getGoogleToken"
+      }, 
+      {
+        "source": "/conectar",
+        "function": "acessarLinkParaLogar"
+      }
+    ]
+  },
+  "functions": {
+    "source": "functions"
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }, 
+  "emulators": {
+    "database": {
+      "host": "http://localhost",
+      "port": "0001"
+    }
+  }
+ 
+}

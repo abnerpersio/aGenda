@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="Abner Persio">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>a Genda - Configurações</title>
+	<link rel="icon" href="./assets/images/favicon.ico">
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="./assets/css/preloader.css" rel="stylesheet">
+	<link href="./assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script src="./js/core/libraries/jquery.min.js"></script>
+	<script src="./js/core/libraries/bootstrap.min.js"></script>
+	<script src="./js/plugins/ui/nicescroll.min.js"></script>
+	<script src="./js/plugins/ui/drilldown.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script src="./js/plugins/forms/tags/tokenfield.min.js"></script>
+	<script src="./js/plugins/forms/selects/select2.min.js"></script>
+	<script src="./js/plugins/forms/styling/uniform.min.js"></script>
+	<script src="./js/plugins/ui/moment/moment.min.js"></script>
+	<script src="./js/plugins/notifications/jgrowl.min.js"></script>
+
+	<script src="./js/plugins/tables/datatables.min.js"></script>
+
+	<script src="./js/core/core.js"></script>
+	<!-- vue js -->
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+	<script src="js/utils/notificar.js"></script>
+	<!-- /theme JS files -->
+	
+	<!-- Quando estiver usando firebase hosting -->
+	<script src="/__/firebase/8.1.1/firebase-app.js"></script>
+	<script src="/__/firebase/8.1.1/firebase-analytics.js"></script>
+	<script src="/__/firebase/8.1.1/firebase-auth.js"></script>
+	<script src="/__/firebase/8.1.1/firebase-database.js"></script> 
+	<script src="/__/firebase/8.1.1/firebase-functions.js"></script>
+
+	<!-- Inicializando Firebase -->
+	<script src="/__/firebase/init.js"></script>
+	<!-- / Quando estiver usando firebase hosting -->
+
+</head>
+
+<body>
+
+	<div class="preloader"> 
+
+		<div class="content">
+				<img class="" src="assets/images/loader.gif">
+				<h4 class="text-white">mexendo nas configurações&hellip; 😉</h4>
+				<h5 class="text-muted mt-6"> por <a target="blank" href="https:/instagram.com/abnerpersio">Abner Persio</a></h5>
+		</div>	
+	</div>
+	<script src="js/loader.js"></script>
+
+	<!-- Main navbar -->	
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="	" href="./home"><img src="./assets/images/logo_light.png" alt=""></a>
+
+			<ul class="nav navbar-nav pull-right visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+
+			<p class="navbar-text"><span class="label bg-success-400">Online</span></p>
+
+			<ul class="nav navbar-nav navbar-right">
+			
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+	<!-- Second navbar -->
+	<div class="navbar navbar-default flash" id="navbar-second">
+		<ul class="nav navbar-nav no-border visible-xs-block">
+			<li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second-toggle"><i class="icon-menu7"></i></a></li>
+		</ul>
+
+		<div class="navbar-collapse collapse" id="navbar-second-toggle">
+			<ul class="nav navbar-nav">
+				<li><a href="./home"> <i class="icomoon icon-calendar52 position-left"></i>  Agenda </a></li>
+
+		
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="./sistema">
+						<i class="icon-embed2 position-left text-muted"></i>
+						Versão
+						<span class="label label-inline position-right bg-success-400">1.0.0</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /second navbar -->
+
+	<!-- Page header -->
+	<div class="page-header">
+		<div class="page-header-content">
+			<div class="page-title">
+				<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Configurações </span>do usuário</h4>
+
+				<ul class="breadcrumb breadcrumb-caret position-right">
+					<li><a href="./home">Home</a></li>
+					<li class="active"> Configurações </a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	<!-- /page header -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Toolbar -->
+				<div class="navbar navbar-default navbar-component navbar-xs">
+					<ul class="nav navbar-nav visible-xs-block">
+						<li class="full-width text-center"><a data-toggle="collapse" data-target="#navbar-filter"><i class="icon-menu7"></i></a></li>
+					</ul>
+
+					<div class="navbar-collapse collapse" id="navbar-filter">
+						<ul class="nav navbar-nav element-active-slate-400">
+							<li class="active"><a href="#tabelas" data-toggle="tab"><i class="icon-menu7 position-left"></i> Informações </a></li>
+							<li><a href="#configs" data-toggle="tab"><i class="icon-cog3 position-left"></i> Configurações </a></li>
+						</ul>
+
+						<div class="navbar-right">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-gear"></i> <span class="visible-xs-inline-block position-right"> Options</span> <span class="caret"></span></a>
+									<ul class="dropdown-menu dropdown-menu-right">
+										<li><a href="#"><i class="icon-image2"></i> Nada por enquanto&hellip; </a></li>
+										<li class="divider"></li>
+										<li><a href="#"><i class="icon-cog5"></i> Nada por enquanto&hellip; </a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /toolbar -->
+
+
+				<!-- Tabs -->
+				<div class="row">
+					<div class="col-lg-10">
+						<div class="tabbable">
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="tabelas">		
+
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title text-semibold">Dados</h6>
+											<div class="heading-elements">
+												<ul class="icons-list">
+													<li><a data-action="collapse"></a></li>
+													<li><a data-action="reload"></a></li>
+													<li><a data-action="close"></a></li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-sm-6">
+													<div class="form-group">
+														<button type="" class="btn btn-primary mb-5" data-toggle="collapse" data-target="#novo_registro">Novo registro</button>
+													
+														<div class="collapse" id="novo_registro">
+
+															<div class="form-group mt-5">
+																<form action="javascript:void(0)" onsubmit="enviarVariosDados1(this.tipo.value)">
+																<div class="row">
+																	<div class="col-sm-6">
+																		<label class="text-muted">Tipo</label>
+																		<select required class="form-control" id="tipo-de-registro" name="tipo">
+																			<option selected disabled value="">Selecione</option>
+																			<option value="profissionais">Profissional</option>
+																			<option value="salas">Sala</option>
+																			<option value="especialidades">Especialidades</option>
+																			<option value="procedimentos">Procedimentos</option>
+																		</select>
+																	</div>
+							
+																	<div class="col-sm-6">
+																		<label for="">Dados</label>
+																		<input required type="text" class="form-control tokenfield-1" value="">
+																		<span class="help-block">digite algo, pressione enter e diga uau!</span>
+																	</div>
+																	<div class="col-sm-12" style="text-align: right">
+																		<button type="submit" class="btn btn-success">Enviar novo <i class="icon-file-check position-right"></i></button>
+																	</div>
+																</div>
+																</form>
+															</div>
+						
+															<div class="form-group">
+																<div class="row">
+																	<div class="col-sm-12 form-group">
+																		
+																	</div>
+																</div>
+															</div>	
+	
+	
+														</div>
+													</div>
+
+													<div class="form-group form-row">
+														<label class="text-muted">Profissionais</label>
+														<select class="select-pesquisa vue-display-profissionais" id="profissionais">
+															<option v-for="pessoa in items" v-bind:value="pessoa.nome"> <span>{{ pessoa.nome }}</span></option>
+															<option selected value="all" style="display:none"></option>
+														</select>
+													</div>
+													
+													<div class="form-group" >
+														<label class="text-muted">Salas</label>
+														<select class="select-pesquisa vue-display-salas" id="salas">
+															<option v-for="sala in items" v-bind:value="sala.nome"> <span>{{ sala.nome }}</span></option>
+															<option selected value="all" style="display:none"></option>
+														</select>
+													</div>
+
+													<div class="form-group">
+														<label class="text-muted">Pacientes</label>
+														<select class="select-pesquisa vue-display-pacientes" id="pacientes">
+															<option v-for="paciente in items" v-bind:value="paciente.nome"><span>{{ paciente.nome }}</span></option>
+															<option selected value="all" style="display:none"></option>
+														</select>
+													</div>
+													
+													<div class="form-group">
+														<label class="text-muted">Especialidades</label>
+														<select class="select-pesquisa vue-display-especialidades" id="especialidades">
+															<option v-for="especialidade in items" v-bind:value="especialidade.nome"> <span>{{ especialidade.nome }}</span></option>
+															<option selected value="all" style="display:none"></option>
+														</select>
+													</div>
+
+													<div class="form-group">
+														<label class="text-muted">Procedimentos</label>
+														<select class="select-pesquisa vue-display-procedimentos" id="procedimentos">
+															<option v-for="procedimento in items" v-bind:value="procedimento.nome"> <span>{{ procedimento.nome }}</span></option>
+															<option selected value="all" style="display:none"></option>
+														</select>
+
+													</div>
+
+												</div>
+
+												<div class="col-sm-6">						
+													
+												</div>
+
+											</div>
+											
+										</div>
+										
+									</div>
+								
+									
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title text-semibold">Tabela de Pacientes</h6>
+											<h6 class="text-muted">Em breve...</h6>
+											<div class="heading-elements">
+												<ul class="icons-list">
+													<li><a data-action="collapse"></a></li>
+													<li><a data-action="reload"></a></li>
+													<li><a data-action="close"></a></li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="panel-body">
+											<table id="table" class="table table-striped table-lg">
+												<thead>
+													<tr>
+														<th><input type="checkbox" class="styled" disabled></th>
+														<th>Nome</th>
+														<th>CPF</th>
+														<th>Telefone</th>
+														<th class="text-center">Actions</th>
+													</tr>
+												</thead>
+												<tbody>
+
+												</tbody>
+											</table>
+										</div>
+										
+									</div>
+								</div>
+
+								<!-- Aba Configurações -->
+								<div class="tab-pane fade" id="configs">
+
+									<!-- Gerais -->
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title text-semibold">Suas Configurações</h6>
+											<div class="heading-elements">
+												<ul class="icons-list">
+							                		<li><a data-action="collapse"></a></li>
+							                		<li><a data-action="reload"></a></li>
+							                		<li><a data-action="close"></a></li>
+							                	</ul>
+						                	</div>
+										</div>
+
+										<div class="panel-body">
+											<form action="javascript:void(0)">
+												<div class="form-group">
+													<div class="row">
+														<div class="col-md-6">
+															<label>Nome de Usuário (provisório)</label>
+															<input id="username" readonly="readonly" type="text" v-bind:value="items" class="form-control vue-display-username">
+														</div>
+														<div class="col-md-6">
+															<label>Nome</label>
+															<input id="nome_completo" type="text" value="" class="form-control">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<div class="col-md-6">
+															<label>Email</label>
+															<input id="email_usuario" type="text" readonly="readonly" value="" class="form-control">
+														</div>
+														<div class="col-md-6">
+								                            <label>Sua equipe</label>
+								                            <select class="form-control" id="equipe_usuario_editar" class="select">
+								                                <option value="Harmovida" selected="selected">Harmovida</option>  
+															</select>
+															<span class="help-block">em breve você poderá criar novas equipes!</span>
+														</div>
+													</div>
+												</div>
+
+						                        <div class="text-right">
+						                        	<button type="submit" onclick="notificar('você ainda não pode alterar essas informações por aqui, entre em contato com o suporte :)', 'bg-info')" class="btn btn-success">Salvar Dados <i class="icon-file-upload position-right"></i></button>
+						                        </div>
+											</form>
+										</div>
+									</div>	
+									<!-- /Gerais -->
+
+
+									<!-- Equipe -->
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title text-semibold">Configurações da Equipe</h6>
+											<div class="heading-elements">
+												<ul class="icons-list">
+							                		<li><a data-action="collapse"></a></li>
+							                		<li><a data-action="reload"></a></li>
+							                		<li><a data-action="close"></a></li>
+							                	</ul>
+						                	</div>
+										</div>
+
+										<div class="panel-body">
+											<form action="javascript:void(0)">
+												<div class="form-group">
+													<div class="row">
+														<div class="col-md-3">
+															<label>Nome da Equipe</label>
+															<select class="form-control" id="equipe_usuario_atual" class="select">
+								                                <option value="Harmovida" selected="selected">Harmovida</option>  
+															</select>
+															<span class="help-block">em breve você poderá criar novas equipes!</span>
+														</div>
+
+														<div class="col-md-9">
+															<label>Membros</label>
+															<input id="membros_equipe" type="text" value="" readonly="readonly" class="form-control">
+															<span class="help-block">em breve você poderá controlar essa função</span>
+														</div>
+													</div>
+												</div>
+
+						                        <div class="text-right">
+						                        	<button type="submit" onclick="notificar('você ainda não pode alterar essas informações por aqui, entre em contato com o suporte :)', 'bg-info')" class="btn btn-success">Salvar Dados <i class="icon-file-upload position-right"></i></button>
+						                        </div>
+											</form>
+										</div>
+									</div>
+									<!-- /Equipe -->
+
+									<!-- Cadastros -->
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title text-semibold">Novos Cadastros</h6>
+											<div class="heading-elements">
+												<ul class="icons-list">
+							                		<li><a data-action="collapse"></a></li>
+							                		<li><a data-action="reload"></a></li>
+							                		<li><a data-action="close"></a></li>
+							                	</ul>
+						                	</div>
+										</div>
+
+										<div class="panel-body">
+											<form action="javascript:void(0)" onsubmit="enviarVariosDados2(this.tipo.value)">
+												<div class="form-group">
+													<div class="row">
+														<div class="col-md-3">
+															<label for="">Tipo</label>
+															<select required class="form-control" name="tipo" id="alterar_cadastros">
+																<option selected disabled value="">Selecione</option>
+																<option value="profissionais">Profissionais</option>
+																<option value="salas">Salas</option>
+																<option value="procedimentos">Procedimentos</option>
+																<option value="especialidades">Especialidades</option>
+															</select>	
+														</div>
+														<div class="col-md-9">
+															<label for="">Dados</label>
+															<input required type="text" class="form-control tokenfield-2" value="">
+															<span class="help-block">digite algo, pressione enter e diga uau!</span>
+														</div>
+													</div>
+												</div>
+
+						                        <div class="text-right">
+						                        	<button type="submit" onsubmit="this.reset()" class="btn btn-success">Salvar Dados <i class="icon-file-upload position-right"></i></button>
+						                        </div>
+											</form>
+										</div>
+									</div>
+									<!-- /Cadastros -->
+									
+									<!-- clientes -->
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title text-semibold">Cadastrar Cliente</h6>
+											<div class="heading-elements">
+												<ul class="icons-list">
+							                		<li><a data-action="collapse"></a></li>
+							                		<li><a data-action="reload"></a></li>
+							                		<li><a data-action="close"></a></li>
+							                	</ul>
+						                	</div>
+										</div>
+
+										<div class="panel-body">
+											
+											<form action="javascript:void(0)" onsubmit="novoCliente(this.nome.value, this.telefone.value, this.cpf.value, this.email.value)">
+												<div class="form-group">
+													<div class="row">
+														<div class="col-sm-6">
+															<label>Nome*</label>
+															<input required type="text" name="nome" placeholder="Insira o Nome do cliente" class="form-control">
+														</div>
+
+														<div class="col-sm-6">
+															<label>Telefone*</label>
+															<input required type="number" name="telefone" placeholder="Telefone para contato" class="form-control">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<div class="col-sm-6">
+															<label>CPF*</label>
+															<input required type="text" name="cpf" placeholder="CPF" class="form-control">
+														</div>
+
+														<div class="col-sm-6">
+															<label>Email</label>
+															<input type="cpf" name="email" placeholder="Email (opcional)" class="form-control">
+														</div>
+													</div>
+												</div>
+
+												<div class="text-right">
+													<button type="submit" class="btn btn-success">Salvar Dados <i class="icon-file-upload position-right"></i></button>
+												</div>
+											</form>
+
+										</div>
+									</div>
+									<!-- /clientes -->
+
+								</div>
+								<!-- /Aba configurações -->
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2">
+
+						<!-- Navigation -->
+						
+				    	<div class="panel panel-flat">
+							<div class="panel-heading">
+								<h6 class="panel-title">Navegue</h6>
+							</div>
+
+							<div class="list-group list-group-borderless no-padding-top">
+								<a href="#" class="list-group-item"><i class="icon-user"></i> Nada por enquanto&hellip; </a>
+								<div class="list-group-divider"></div>
+								<a href="#tabelas" data-toggle="tab" class="list-group-item"><i class="icon-menu7 position-left"></i> Informações </a>
+								<a href="#configs" data-toggle="tab" class="list-group-item"><i class="icon-cog3"></i> Configurações </a>
+							</div>
+						</div>
+						<!-- /navigation -->
+
+					</div>
+				</div>
+				<!-- /tabs -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+
+		<!-- Footer -->
+		<div class="footer text-muted">
+			v. <a href="./home"> 1.0.0</a>.
+		</br>
+			&copy; 2020 <a href="./home">a Genda Sistemas de Controle</a>.
+			Criado com &hearts; por <a target="blank" href="https:/instagram.com/abnerpersio">Abner Persio</a>
+		</div>
+		<!-- /footer -->
+
+	</div>
+	<!-- /page container -->
+
+	<!-- caso esteja usando em um computador ou local -->
+	<!-- 
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-functions.js"></script>
+	
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyAUR1AS0beiA9C1ObpNwVw2T-VM_mxtx0I",
+			authDomain: "a-genda-2020.firebaseapp.com",
+			databaseURL: "https://a-genda-2020.firebaseio.com",
+			projectId: "a-genda-2020",
+			storageBucket: "a-genda-2020.appspot.com",
+			messagingSenderId: "397881610119",
+			appId: "1:397881610119:web:1309ef7354f79472448d22",
+			measurementId: "G-012DRR6N3T"
+		};
+		firebase.initializeApp(firebaseConfig);  
+	</script>  			
+	-->
+	<!-- /caso esteja usando em um computador ou local -->
+
+	<script src="js/database/crud.js"></script>
+	<script src="js/auth/auth.js"></script>	
+	<script src="js/auth/observer.js"></script>
+	<script src="./js/utils/init-page-user-config.js"></script>
+	<script src="js/utils/user-config-page.js"></script>
+
+</body>
+</html>

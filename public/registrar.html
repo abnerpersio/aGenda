@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="Abner Persio">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>a Genda - Registre-se</title>
+	<link rel="icon" href="./assets/images/favicon.ico">
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="./assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+	<link href="./assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script src="./js/core/libraries/jquery.min.js"></script>
+	<script src="./js/core/libraries/bootstrap.min.js"></script>
+	<script src="./js/plugins/ui/nicescroll.min.js"></script>
+	<script src="./js/plugins/ui/drilldown.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script src="./js/plugins/forms/styling/uniform.min.js"></script>
+
+	<script src="./js/core/core.js"></script>
+	<!-- /theme JS files -->
+
+</head>
+
+<body>
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="" href="./home"><img src="assets/images/logo_light.png" alt=""></a>
+
+			<ul class="nav navbar-nav pull-right visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="./home">
+						<i class="icon-display4"></i> <span class=" position-right">Acessar o sistema </span> 
+					</a>
+				</li>
+
+				<li>
+					<a target="blank" href="https://wa.me/5519974198800?&text=Olá!%20Preciso%20de%20suporte%20para%20o%20sistema%20A%20Genda">
+						<i class="icon-user-tie"></i> <span class=" position-right"> Falar com o Desenvolvedor </span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container login-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Advanced login -->
+					<div class="panel panel-body login-form">
+						<div class="text-center">
+							<div class="p-5"> <img src="./assets/images/logo_dark.svg" alt=""> </div>
+							<h5 class="content-group"><strong>Solicitar uma conta</strong><p class="display-block">Deseja ter um sistema desse só para você?</p></h5>
+						</div>
+
+						<div class="content-divider form-group"><h5>Clique no botão que vamos te auxiliar!</h5></div>
+
+						<div class="content-divider text-muted form-group"></div>
+						<a id="whats_link" target="blank" href="https://api.whatsapp.com/send?phone=5519974198800&text=Ol%C3%A1%20me%20interessei%20pelo%20sistema%20A%20Genda%20e%20gostaria%20de%20um%20cadastro%20exclusivo%20para%20mim."></a>
+						<button onclick="CriaLink()" type="submit" class="btn bg-teal btn-block btn-lg">Quero agora! <i class="icon-circle-right2 position-right"></i></button>
+
+					</div>
+
+
+
+				<!-- /advanced login -->
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+
+		<script>
+			// $("form").submit(alert("Abner"));
+			function CriaLink(){
+				alert('você será direcionado, clique em ok e aguarde!')
+				document.getElementById("whats_link").click();
+			}
+
+		</script>
+
+		<!-- Footer -->
+		<div class="footer text-muted">
+			v. <a href="./home"> 1.0.0</a>.
+		</br>
+			&copy; 2020 <a href="./home">a Genda Sistemas de Controle</a>.
+			Criado com &hearts; por <a target="blank" href="https:/instagram.com/abnerpersio">Abner Persio</a>
+		</div>
+		<!-- /footer -->
+
+	</div>
+	<!-- /page container -->
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="Abner Persio">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>a Genda - Login</title>
+	<link rel="icon" href="./assets/images/favicon.ico">	
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="./assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script src="./js/core/libraries/jquery.min.js"></script>
+	<script src="./js/core/libraries/bootstrap.min.js"></script>
+	<script src="./js/plugins/ui/nicescroll.min.js"></script>
+	<script src="./js/plugins/ui/drilldown.js"></script>
+	<script src="./js/plugins/notifications/jgrowl.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script src="./js/plugins/forms/styling/uniform.min.js"></script>
+
+	<script src="./js/core/core.js"></script>
+	<script src="js/utils/notificar.js"></script>
+	<!-- /theme JS files -->
+
+</head>
+
+<body>
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="	" href="./home"><img src="./assets/images/logo_light.png" alt=""></a>
+
+			<ul class="nav navbar-nav pull-right visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="./home">
+						<i class="icon-display4"></i> <span class=" position-right">Acessar o sistema </span> 
+					</a>
+				</li>
+
+				<li>
+					<a target="blank" href="https://wa.me/5519974198800?&text=Olá!%20Preciso%20de%20suporte%20para%20o%20sistema%20A%20Genda">
+						<i class="icon-user-tie"></i> <span class=" position-right"> Falar com o Desenvolvedor </span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container login-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Advanced login -->
+				<form action="javascript:void(0)" onsubmit="autenticarEmail(this.email.value, this.senha.value)">
+					<div class="login-form">
+						<div class="text-center">
+							<div class="p-5"> <img src="./assets/images/logo_dark.svg" alt=""> </div>
+							<h5 class="content-group-lg">Faça login em sua conta <small class="display-block">Preencha com suas credenciais</small></h5>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="text" name="email" class="form-control input-lg" placeholder="Username">
+							<div class="form-control-feedback">
+								<i class="icon-user text-muted"></i>
+							</div>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="password" name="senha" class="form-control input-lg" placeholder="Password">
+							<div class="form-control-feedback">
+								<i class="icon-lock2 text-muted"></i>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<button type="submit" class="btn bg-blue btn-block btn-lg">Login <i class="icon-arrow-right14 position-right"></i></button>
+							<button type="button" class="btn bg-black btn-block btn-lg" data-toggle="modal" data-target="#modal_demo"> Visualizar demonstração </button> 
+						</div>
+
+
+						<div class="content-divider text-muted form-group"><span>Ainda não tem uma conta?</span></div>
+						<a href="./registrar" class="btn bg-slate btn-block btn-lg content-group">Registrar</a>
+						<span class="help-block text-center">Ao continuar, você confirma que leu e concorda com nossos <a target="blank" href="./termos">Termos e Condições</a> e <a target="blank" href="./termos">Política de Dados</a></span>
+					</div>
+				</form>
+				<!-- /advanced login -->
+
+				<!-- modal sincronizar -->
+				<div id="modal_demo" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h5 class="modal-title">Deseja Fazer um teste?</h5>
+							</div>
+							
+								<div class="modal-body text-center px-5">
+									<h6 class="">Recurso disponível em breve. Aguarde :)</h6>	
+								</div>
+						</div>
+					</div>
+				</div>
+				<!-- /modal sincronizar -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+
+		<!-- Footer -->
+		<div class="footer text-muted">
+			v. <a href="./home"> 1.0.0</a>.
+		</br>
+			&copy; 2020 <a href="./home">a Genda Sistemas de Controle</a>.
+			Criado com &hearts; por <a target="blank" href="https:/instagram.com/abnerpersio">Abner Persio</a>
+		</div>
+		<!-- /footer -->
+
+	</div>
+	<!-- /page container -->
+	
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-functions.js"></script>
+
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyAUR1AS0beiA9C1ObpNwVw2T-VM_mxtx0I",
+			authDomain: "a-genda-2020.firebaseapp.com",
+			databaseURL: "https://a-genda-2020.firebaseio.com",
+			projectId: "a-genda-2020",
+			storageBucket: "a-genda-2020.appspot.com",
+			messagingSenderId: "397881610119",
+			appId: "1:397881610119:web:1309ef7354f79472448d22",
+			measurementId: "G-012DRR6N3T"
+  		};
+  			// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+	</script>
+
+	<script src="js/auth/auth.js"></script>
+
+</body>
+</html>
